@@ -18,8 +18,6 @@ function App() {
 					<Route exact path="/info" component={InfoPage}/>
 					<Route exact path="/roadmap" component={RoadmapPage}/>
 					<Route exact path="/mint" component={MintPage}/>
-					{/*<Route exact path="/players" component={Players}/>*/}
-					{/*<Route exact path="/prize" component={Prize}/>*/}
 					<Redirect from="*" to="/"/>
 				</Switch>
 			</BrowserRouter>
