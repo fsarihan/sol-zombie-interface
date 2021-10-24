@@ -14,6 +14,11 @@ import {
 
 import {WalletNotConnectedError} from "@solana/wallet-adapter-base";
 
+export {default as debounce} from "./debounce"
+export {default as capsFirst} from "./capsFirst"
+// @ts-ignore
+export {default as percentage} from "./percentage"
+
 interface BlockhashAndFeeCalculator {
     blockhash: Blockhash;
     feeCalculator: FeeCalculator;
