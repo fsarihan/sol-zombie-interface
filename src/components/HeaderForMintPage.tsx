@@ -7,6 +7,8 @@ import {
     Stack,
     useColorModeValue,
 } from "@chakra-ui/react";
+
+
 import {NavLink as LinkRouter} from 'react-router-dom';
 import Logo from "./Logo";
 import "@fontsource/teko/400.css"
@@ -89,15 +91,8 @@ const MenuLinks = ({isOpen}) => {
 
             >
 
-                <RSLink
-                    activeClass="active"
-                    to="home"
-                    spy={true}
-                    smooth={true}
-                    offset={-1000}
-                    duration={850}
-                    exact>
-                    {/*@ts-ignore*/}
+                <LinkRouter to={'/'}
+                            exact>
                     <MenuItem
                         px={2}
                         py={2}
@@ -108,16 +103,11 @@ const MenuLinks = ({isOpen}) => {
                         }} to="/">
                         HOME
                     </MenuItem>
-                </RSLink>
-                <RSLink
-                    activeClass="active"
-                    to="history"
-                    spy={true}
-                    smooth={true}
-                    offset={-70}
-                    duration={850}
-                    exact>
-                    {/*@ts-ignore*/}
+                </LinkRouter>
+                <LinkRouter
+                    to="/"
+                    exact
+                >
                     <MenuItem
                         px={2}
                         py={2}
@@ -128,16 +118,11 @@ const MenuLinks = ({isOpen}) => {
                         }}>
                         HISTORY
                     </MenuItem>
-                </RSLink>
-                <RSLink
-                    activeClass="active"
-                    to="info"
-                    spy={true}
-                    smooth={true}
-                    offset={-70}
-                    duration={850}
+                </LinkRouter>
+
+                <LinkRouter
+                    to="/"
                     exact>
-                    {/*@ts-ignore*/}
                     <MenuItem
                         px={2}
                         py={2}
@@ -148,16 +133,10 @@ const MenuLinks = ({isOpen}) => {
                         }}>
                         INFO
                     </MenuItem>
-                </RSLink>
-                <RSLink
-                    activeClass="active"
-                    to="roadmap"
-                    spy={true}
-                    smooth={true}
-                    offset={-70}
-                    duration={850}
+                </LinkRouter>
+                <LinkRouter
+                    to="/"
                     exact>
-                    {/*@ts-ignore*/}
                     <MenuItem
                         px={2}
                         py={2}
@@ -168,10 +147,9 @@ const MenuLinks = ({isOpen}) => {
                         }}>
                         ROADMAP
                     </MenuItem>
-                </RSLink>
+                </LinkRouter>
                 <LinkRouter to={'/mint'}
                             exact>
-                    {/*@ts-ignore*/}
                     <MenuItem
                         px={2}
                         py={2}

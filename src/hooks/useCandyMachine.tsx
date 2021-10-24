@@ -46,7 +46,7 @@ export default function useCandyMachine() {
     const [isMinting, setIsMinting] = useState(false);
     const [isSoldOut, setIsSoldOut] = useState(false);
     const [mintStartDate, setMintStartDate] = useState(
-        new Date(parseInt(process.env.NEXT_PUBLIC_CANDY_START_DATE!, 10))
+        new Date(parseInt(process.env.REACT_APP_PUBLIC_CANDY_START_DATE!, 10))
     );
 
     useEffect(() => {
@@ -234,6 +234,7 @@ export default function useCandyMachine() {
                 }
             }
         } catch (error: any) {
+            console.log(error);
             let message = error.msg || "Minting failed! Please try again!";
             if (!error.msg) {
                 if (error.message.indexOf("0x138")) {

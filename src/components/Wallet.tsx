@@ -27,11 +27,6 @@ const WalletConnectionProvider: FC = ({children}) => {
             getPhantomWallet(),
             getSlopeWallet(),
             getSolflareWallet(),
-            getTorusWallet({
-                options: {
-                    clientId: "CLIENT_ID",
-                },
-            }),
             getLedgerWallet(),
             getSolletWallet({network}),
             getSolletExtensionWallet({network}),

@@ -25,12 +25,12 @@ import {
     Badge,
 } from '@chakra-ui/react';
 
-import bg1 from '../assets/img/bg.jpg';
+import bg1 from '../assets/img/main-banner-bg2.jpg';
 // @ts-ignore
 import GlitchText from 'react-glitch-effect/core/GlitchText';
 import Footer from '../components/Footer';
 
-import {WalletMultiButton} from "@solana/wallet-adapter-react-ui";
+import {WalletMultiButton, WalletDisconnectButton} from "@solana/wallet-adapter-react-ui";
 import useCandyMachine from "../hooks/useCandyMachine";
 import useWalletBalance from "../hooks/useWalletBalance";
 import {useWallet} from "@solana/wallet-adapter-react";
@@ -39,7 +39,7 @@ import {Toaster} from "react-hot-toast";
 import Countdown from "react-countdown";
 import useWalletNfts from "../hooks/useWalletNFTS";
 import AnNFT from "../components/NFT";
-
+import Header from '../components/HeaderForMintPage';
 
 interface StatsCardProps {
     title: string;
@@ -102,8 +102,18 @@ export default function Home() {
         const [mintCount, setMintCount] = useState(1);
 
         return (
-            <Box my={-5} maxW="lg">
-                <Center><FormLabel fontSize={{base: '3xl', sm: '3xl', lg: '4xl'}}>AMOUNT</FormLabel></Center>
+            <Box maxW="md">
+
+                {/*<Center>*/}
+                {/*    <Text*/}
+                {/*        fontSize={{base: '4xl', sm: '3xl', lg: '4xl'}}*/}
+                {/*        colorScheme="red"> YOUR BALANCE {balance.toFixed(2)} SOL*/}
+
+                {/*    </Text>*/}
+                {/*</Center>*/}
+
+                <Center><FormLabel fontSize={{base: '3xl', sm: '3xl', lg: '4xl'}}><b>AMOUNT</b></FormLabel></Center>
+
                 <NumberInput
                     w="full"
                     max={nftsData.itemsRemaining}
@@ -131,13 +141,15 @@ export default function Home() {
                         disabled={isMinting} colorScheme="red" fontSize={'xl'}>
                     {isMinting ? "loading" : `MINT ${mintCount} NFT`}
                 </Button>
+
                 <Center>
-                    <Badge
+                    <Text
                         my={4}
-                        fontSize={{base: '3xl', sm: '2xl', lg: '3xl'}}
-                        colorScheme="red">TOTAL <Badge
-                        fontSize={{base: '3xl', sm: '2xl', lg: '3xl'}}
-                        colorScheme="purple">{(mintCount * 0.99).toFixed(2)} SOL</Badge></Badge>
+                        fontSize={{base: '4xl', sm: '3xl', lg: '4xl'}}
+                        colorScheme="red">TOTAL {(mintCount * 0.99).toFixed(2)} SOL </Text>
+                </Center>
+                <Center>
+                    <WalletDisconnectButton/>
                 </Center>
             </Box>
         );
@@ -145,14 +157,26 @@ export default function Home() {
 
     return (
         <>
-            <Toaster/>
+            <Box
+                bgGradient="linear(to-l, #000, #000)"
+                sx={{
+                    position: '-webkit-sticky', /* Safari */
+                    // @ts-ignore
+                    position: 'sticky',
+                    top: '0',
+                    'z-index': "999",
+                }}>
+                <Header/>
+            </Box>
             <Container maxW={'full'} backgroundImage={bg1}
                        backgroundPosition="inherit"
                        backgroundRepeat="round">
+
+                <Toaster/>
                 <Stack
                     align={'center'}
                     spacing={{base: 6, md: 8}}
-                    py={{base: 20, md: 28}}
+                    py={{base: 20, md: 20}}
                     direction={{base: 'column', md: 'row'}}>
                     <Stack flex={1} spacing={{base: 5, md: 10}}>
                         <GlitchText color1={'#00FFA3'} color2={'#DC1FFF'}>
@@ -174,12 +198,8 @@ export default function Home() {
                               fontWeight={200}
                               fontSize={{base: '3xl', sm: '2xl', lg: '3xl'}}>
                             There are no bonding curves, no price tiers here. Buying a fairly distributed SOL ZOMBIE NFT costs currently 0.99 SOL.
-                            <p><Badge
-                                fontSize={{base: '3xl', sm: '2xl', lg: '3xl'}}
-                                colorScheme="green">Your Balance <Badge
-                                fontSize={{base: '3xl', sm: '2xl', lg: '3xl'}}
-                                colorScheme="purple">{balance.toFixed(2)} SOL</Badge></Badge></p>
                         </Text>
+
                     </Stack>
                 </Stack>
 
@@ -191,7 +211,7 @@ export default function Home() {
                                     <p>SOLD OUT</p>
                                 ) : (
                                     <>
-                                        <FormControl id="amount">
+                                        <FormControl id="amount" mb={'75'}>
                                             <Center>
                                                 <MintMany/>
                                             </Center>
@@ -202,39 +222,42 @@ export default function Home() {
                                 )}
                             </>
                         ) : (
-                            <Countdown
-                                date={mintStartDate}
-                                onMount={({completed}) => completed && setIsMintLive(true)}
-                                onComplete={() => setIsMintLive(true)}
-                            />
+                            <Center>
+                                <Text fontSize={'4xl'}>
+                                    <Countdown
+                                        date={mintStartDate}
+                                        onMount={({completed}) => completed && setIsMintLive(true)}
+                                        onComplete={() => setIsMintLive(true)}
+                                    />
+                                </Text>
+                            </Center>
                         )}
                     </>
                 ) : (
-                    <>
-                        <Center fontSize={'4xl'}>Connect Wallet To Mint </Center>
+                    <Box mb={'265'}>
+                        <Center fontSize={'4xl'}>CONNECT WALLET TO MINT</Center>
                         <Center> <WalletMultiButton/></Center>
-                    </>
+                    </Box>
                 )}
 
 
-                <Box maxW="lg" mx={'auto'} pt={5} px={{base: 2, sm: 12, md: 17}}>
-                    <SimpleGrid columns={{base: 3, md: 3}} spacing={{base: 3}}>
-                        <StatsCard
-                            title={'Available'}
-                            stat={nftsData.itemsRemaining}
-                        />
-                        <StatsCard
-                            title={'Minted'}
-                            stat={nftsData.itemsRedeemed}
-                        />
-                        <StatsCard
-                            title={'Total'}
-                            stat={nftsData.itemsAvailable}
-                        />
-                    </SimpleGrid>
-                </Box>
-
-
+                {/*<Box maxW="lg" mx={'auto'} pt={5} px={{base: 2, sm: 12, md: 17}}>*/}
+                {/*    <SimpleGrid columns={{base: 3, md: 3}} spacing={{base: 3}}>*/}
+                {/*        <StatsCard*/}
+                {/*            title={'Available'}*/}
+                {/*            stat={nftsData.itemsRemaining}*/}
+                {/*        />*/}
+                {/*        <StatsCard*/}
+                {/*            title={'Minted'}*/}
+                {/*            stat={nftsData.itemsRedeemed}*/}
+                {/*        />*/}
+                {/*        <StatsCard*/}
+                {/*            title={'Total'}*/}
+                {/*            stat={nftsData.itemsAvailable}*/}
+                {/*        />*/}
+                {/*    </SimpleGrid>*/}
+                {/*</Box>*/}
+                <br/>
                 <Footer/>
             </Container>
         </>
