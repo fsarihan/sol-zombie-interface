@@ -213,7 +213,7 @@ export default function Home() {
                                 {isSoldOut ? (
                                     <>
                                         <Center>
-                                            <Text fontSize={'6xl'}>SOLD OUT</Text>
+                                            <Text fontSize={'6xl'} mb={250}>SOLD OUT</Text>
                                         </Center>
                                     </>
                                 ) : (
