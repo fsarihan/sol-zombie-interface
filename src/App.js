@@ -9,7 +9,6 @@ import OnePage from './pages/OnePage';
 import Wallet from './components/Wallet';
 import {WalletBalanceProvider} from "./hooks/useWalletBalance";
 
-require('./style/style.css');
 
 function App() {
 	return (

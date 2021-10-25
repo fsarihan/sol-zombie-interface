@@ -41,6 +41,9 @@ import useWalletNfts from "../hooks/useWalletNFTS";
 import AnNFT from "../components/NFT";
 import Header from '../components/HeaderForMintPage';
 
+const MINT_PRICE_SOL: number = parseFloat(process.env.REACT_APP_PUBLIC_MINT_PRICE!);
+require('../style/style.css');
+
 interface StatsCardProps {
     title: string;
     stat: string;
@@ -146,7 +149,7 @@ export default function Home() {
                     <Text
                         my={4}
                         fontSize={{base: '4xl', sm: '3xl', lg: '4xl'}}
-                        colorScheme="red">TOTAL {(mintCount * 0.99).toFixed(2)} SOL </Text>
+                        colorScheme="red">TOTAL {(mintCount * MINT_PRICE_SOL).toFixed(2)} SOL </Text>
                 </Center>
                 <Center>
                     <WalletDisconnectButton/>
@@ -197,7 +200,7 @@ export default function Home() {
                               align={'center'}
                               fontWeight={200}
                               fontSize={{base: '3xl', sm: '2xl', lg: '3xl'}}>
-                            There are no bonding curves, no price tiers here. Buying a fairly distributed SOL ZOMBIE NFT costs currently 0.99 SOL.
+                            There are no bonding curves, no price tiers here. Buying a fairly distributed SOL ZOMBIE NFT costs currently {MINT_PRICE_SOL} SOL.
                         </Text>
 
                     </Stack>
@@ -208,7 +211,11 @@ export default function Home() {
                         {new Date(mintStartDate).getTime() < Date.now() ? (
                             <>
                                 {isSoldOut ? (
-                                    <p>SOLD OUT</p>
+                                    <>
+                                        <Center>
+                                            <Text fontSize={'6xl'}>SOLD OUT</Text>
+                                        </Center>
+                                    </>
                                 ) : (
                                     <>
                                         <FormControl id="amount" mb={'75'}>
