@@ -12,20 +12,24 @@ import bg2 from '../assets/img/main-banner-bg2.jpg';
 // @ts-ignore
 import GlitchText from 'react-glitch-effect/core/GlitchText';
 import Footer from '../components/Footer';
+import Header from "../components/Header";
 
-
+// @ts-ignore
 export default function Home() {
     return (
         <section id={"home"}>
             {/*<Container maxW={'full'} backgroundImage={bg2}*/}
             {/*           backgroundPosition="inherit"*/}
             {/*           backgroundRepeat="round">*/}
+
             <Stack
-                mt={-10}
+                mt={-100}
+                h="100vh"
                 align={'center'}
                 spacing={{base: 6, md: 8}}
                 py={{base: 20, md: 28}}
                 direction={{base: 'column', md: 'row'}}>
+
                 <Stack flex={1} spacing={{base: 5, md: 10}}>
                     <GlitchText color1={'#00FFA3'} color2={'#DC1FFF'}>
                         <Heading

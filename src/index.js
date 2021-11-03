@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {extendTheme} from "@chakra-ui/react"
+import GA4React from "ga-4-react";
 
 const theme = extendTheme({
 	styles: {
@@ -38,5 +39,13 @@ ReactDOM.render(
 	</ChakraProvider>,
 	document.getElementById('root')
 );
+try {
+	setTimeout(_ => {
+		const ga4react = new GA4React("G-J51QB5ZNMH");
+		ga4react.initialize();
+	}, 4000);
+} catch (err) {
+	console.log(err);
+}
 
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
     Link,
     Box,
@@ -12,7 +12,8 @@ import Logo from "./Logo";
 import "@fontsource/teko/400.css"
 import "@fontsource/teko/700.css"
 // @ts-ignore
-import {Link as RSLink, animateScroll as scroll} from "react-scroll";
+import {Link as RSLink, animateScroll as scroll, Events, scrollSpy, scroller} from "react-scroll";
+
 
 const NavBar = (props: any) => {
     const [isOpen, setIsOpen] = React.useState(false);
@@ -73,6 +74,7 @@ const MenuItem = ({children, isLast = null, to = "/", ...rest}) => {
 };
 // @ts-ignore
 const MenuLinks = ({isOpen}) => {
+    // @ts-ignore
     return (
         <Box
             display={{base: isOpen ? "block" : "none", md: "block"}}
@@ -93,9 +95,11 @@ const MenuLinks = ({isOpen}) => {
                     activeClass="active"
                     to="home"
                     spy={true}
+                    hashSpy={true}
                     smooth={true}
                     offset={-1000}
                     duration={850}
+
                     exact>
                     {/*@ts-ignore*/}
                     <MenuItem
@@ -113,9 +117,11 @@ const MenuLinks = ({isOpen}) => {
                     activeClass="active"
                     to="history"
                     spy={true}
+                    hashSpy={true}
                     smooth={true}
-                    offset={-70}
+                    // offset={-70}
                     duration={850}
+
                     exact>
                     {/*@ts-ignore*/}
                     <MenuItem
@@ -133,9 +139,11 @@ const MenuLinks = ({isOpen}) => {
                     activeClass="active"
                     to="info"
                     spy={true}
+                    hashSpy={true}
                     smooth={true}
-                    offset={-70}
+                    // offset={-70}
                     duration={850}
+
                     exact>
                     {/*@ts-ignore*/}
                     <MenuItem
@@ -153,9 +161,11 @@ const MenuLinks = ({isOpen}) => {
                     activeClass="active"
                     to="roadmap"
                     spy={true}
+                    hashSpy={true}
                     smooth={true}
-                    offset={-70}
+                    // offset={-70}
                     duration={850}
+
                     exact>
                     {/*@ts-ignore*/}
                     <MenuItem
@@ -200,8 +210,16 @@ const NavBarContainer = ({children, ...props}) => {
             w="100%"
             px={16}
             py={5}
-            bg={["primary.500", "primary.500", "transparent", "transparent"]}
+            sx={{
+                position: '-webkit-sticky', /* Safari */
+                // @ts-ignore
+                position: 'sticky',
+                top: '0',
+                'z-index': "999",
+            }}
+            bgColor={'rgba(0, 0, 0,0.1)'}
             color={["white", "white", "primary.700", "primary.700"]}
+
             {...props}
         >
             {children}

@@ -96,6 +96,9 @@ export default function Home() {
     const [isMintLive, setIsMintLive] = useState(false);
 
     useEffect(() => {
+        console.log(new Date(mintStartDate).getTime());
+        console.log(Date.now());
+        console.log(new Date(mintStartDate).getTime() < Date.now());
         if (new Date(mintStartDate).getTime() < Date.now()) {
             setIsMintLive(true);
         }
@@ -107,13 +110,13 @@ export default function Home() {
         return (
             <Box maxW="md">
 
-                {/*<Center>*/}
-                {/*    <Text*/}
-                {/*        fontSize={{base: '4xl', sm: '3xl', lg: '4xl'}}*/}
-                {/*        colorScheme="red"> YOUR BALANCE {balance.toFixed(2)} SOL*/}
+                <Center>
+                    <Text
+                        fontSize={{base: '4xl', sm: '3xl', lg: '4xl'}}
+                        colorScheme="red"> YOUR BALANCE {balance.toFixed(2)} SOL
 
-                {/*    </Text>*/}
-                {/*</Center>*/}
+                    </Text>
+                </Center>
 
                 <Center><FormLabel fontSize={{base: '3xl', sm: '3xl', lg: '4xl'}}><b>AMOUNT</b></FormLabel></Center>
 
@@ -160,23 +163,14 @@ export default function Home() {
 
     return (
         <>
-            <Box
-                bgGradient="linear(to-l, #000, #000)"
-                sx={{
-                    position: '-webkit-sticky', /* Safari */
-                    // @ts-ignore
-                    position: 'sticky',
-                    top: '0',
-                    'z-index': "999",
-                }}>
-                <Header/>
-            </Box>
             <Container maxW={'full'} backgroundImage={bg1}
-                       backgroundPosition="inherit"
-                       backgroundRepeat="round">
-
+                       backgroundAttachment={'fixed'}
+                       backgroundPosition={'center'}
+                       backgroundSize={'cover'}>
+                <Header/>
                 <Toaster/>
                 <Stack
+                    h="100vh" //TODO: burayı sil.
                     align={'center'}
                     spacing={{base: 6, md: 8}}
                     py={{base: 20, md: 20}}
@@ -192,60 +186,70 @@ export default function Home() {
                                     as={'span'}
                                     position={'relative'}
                                 >
-                                    <b>MINT NFT</b>
+                                    <b>COMING SOON</b>
                                 </Text>
                             </Heading>
                         </GlitchText>
-                        <Text color={'white'} lineHeight={1.0}
-                              align={'center'}
-                              fontWeight={200}
-                              fontSize={{base: '3xl', sm: '2xl', lg: '3xl'}}>
-                            There are no bonding curves, no price tiers here. Buying a fairly distributed SOL ZOMBIE NFT costs currently {MINT_PRICE_SOL} SOL.
-                        </Text>
+                        {/*<Text color={'white'} lineHeight={1.0}*/}
+                        {/*      align={'center'}*/}
+                        {/*      fontWeight={200}*/}
+                        {/*      fontSize={{base: '3xl', sm: '2xl', lg: '3xl'}}>*/}
+                        {/*    There are no bonding curves, no price tiers here. Buying a fairly distributed SOL ZOMBIE NFT costs currently {MINT_PRICE_SOL} SOL.*/}
+                        {/*</Text>*/}
 
                     </Stack>
                 </Stack>
 
-                {connected ? (
-                    <>
-                        {new Date(mintStartDate).getTime() < Date.now() ? (
-                            <>
-                                {isSoldOut ? (
-                                    <>
-                                        <Center>
-                                            <Text fontSize={'6xl'} mb={250}>SOLD OUT</Text>
-                                        </Center>
-                                    </>
-                                ) : (
-                                    <>
-                                        <FormControl id="amount" mb={'75'}>
-                                            <Center>
-                                                <MintMany/>
-                                            </Center>
+                {/*{connected ? (*/}
+                {/*    <>*/}
+                {/*        {new Date(mintStartDate).getTime() < Date.now() ? (*/}
+                {/*            <>*/}
+                {/*                {isSoldOut ? (*/}
+                {/*                    <>*/}
+                {/*                        <Center>*/}
+                {/*                            <Text fontSize={'6xl'} mb={250}>SOLD OUT</Text>*/}
+                {/*                        </Center>*/}
+                {/*                    </>*/}
+                {/*                ) : (*/}
+                {/*                    <>*/}
+                {/*                        <FormControl id="amount" mb={'75'}>*/}
+                {/*                            <Center>*/}
+                {/*                                <MintMany/>*/}
+                {/*                            </Center>*/}
 
-                                        </FormControl>
+                {/*                        </FormControl>*/}
 
-                                    </>
-                                )}
-                            </>
-                        ) : (
-                            <Center>
-                                <Text fontSize={'4xl'}>
-                                    <Countdown
-                                        date={mintStartDate}
-                                        onMount={({completed}) => completed && setIsMintLive(true)}
-                                        onComplete={() => setIsMintLive(true)}
-                                    />
-                                </Text>
-                            </Center>
-                        )}
-                    </>
-                ) : (
-                    <Box mb={'265'}>
-                        <Center fontSize={'4xl'}>CONNECT WALLET TO MINT</Center>
-                        <Center> <WalletMultiButton/></Center>
-                    </Box>
-                )}
+                {/*                    </>*/}
+                {/*                )}*/}
+                {/*            </>*/}
+                {/*        ) : (isMintLive ? (*/}
+                {/*                <>*/}
+                {/*                    <FormControl id="amount" mb={'75'}>*/}
+                {/*                        <Center>*/}
+                {/*                            <MintMany/>*/}
+                {/*                        </Center>*/}
+                {/*                    </FormControl>*/}
+
+                {/*                </>*/}
+                {/*            ) : (*/}
+                {/*                <Center>*/}
+                {/*                    <Text fontSize={'4xl'} mb={300}>*/}
+                {/*                        <Countdown*/}
+                {/*                            date={mintStartDate}*/}
+                {/*                            onMount={({completed}) => completed && setIsMintLive(true)}*/}
+                {/*                            onComplete={() => setIsMintLive(true)}*/}
+                {/*                        />*/}
+                {/*                    </Text>*/}
+                {/*                </Center>*/}
+                {/*            )*/}
+                {/*        )}*/}
+                {/*    </>*/}
+                {/*) : (*/}
+                {/*    <Box mb={'265'}>*/}
+                {/*        <Center fontSize={'4xl'}>CONNECT WALLET TO MINT</Center>*/}
+                {/*        <Center> <WalletMultiButton/></Center>*/}
+                {/*    </Box>*/}
+                {/*)}*/}
 
 
                 {/*<Box maxW="lg" mx={'auto'} pt={5} px={{base: 2, sm: 12, md: 17}}>*/}

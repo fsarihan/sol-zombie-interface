@@ -30,20 +30,20 @@ export default function Info() {
                 py={{base: 20, md: 28}}
                 direction={{base: 'column', md: 'row'}}>
                 <Stack flex={1} spacing={{base: 5, md: 10}}>
-                    <GlitchText color1={'#00FFA3'} color2={'#DC1FFF'}>
-                        <Heading
-                            lineHeight={1}
-                            fontWeight={200}
-                            align={'center'}
-                            fontSize={{base: '8xl', sm: '8xl', lg: '8xl'}}>
-                            <Text
-                                as={'span'}
-                                position={'relative'}
-                            >
-                                <b>INFO</b>
-                            </Text>
-                        </Heading>
-                    </GlitchText>
+
+                    <Heading
+                        lineHeight={1}
+                        fontWeight={200}
+                        align={'center'}
+                        fontSize={{base: '8xl', sm: '8xl', lg: '8xl'}}>
+                        <Text
+                            as={'span'}
+                            position={'relative'}
+                        >
+                            <b>INFO</b>
+                        </Text>
+                    </Heading>
+
                     <Heading
                         lineHeight={1}
                         fontWeight={200}

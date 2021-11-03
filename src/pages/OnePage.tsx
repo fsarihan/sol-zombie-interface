@@ -19,31 +19,27 @@ import Info from '../pages/Info';
 import History from '../pages/History';
 import Roadmap from '../pages/Roadmap';
 import Header from '../components/Header';
+// @ts-ignore
+import {scrollSpy, events} from 'react-scroll'
 
 
 export default function Home() {
+    console.log(scrollSpy);
+    console.log(events);
     return (
         <>
-            <Box
-                bgGradient="linear(to-l, #000, #000)"
-                sx={{
-                    position: '-webkit-sticky', /* Safari */
-                    // @ts-ignore
-                    position: 'sticky',
-                    top: '0',
-                    'z-index': "999",
-                }}>
-                <Header/>
-            </Box>
+            <Header/>
             <Container maxW={'full'} backgroundImage={bg2}
-                       backgroundPosition="inherit"
-                       backgroundRepeat="round">
+                       backgroundAttachment={'fixed'}
+                       backgroundPosition={'center'}
+                       backgroundSize={'cover'}>
                 <Toaster/>
                 <HomePage/>
             </Container>
             <Container maxW={'full'} backgroundImage={bg1}
                        backgroundPosition="inherit"
                        backgroundRepeat="round">
+
                 <History/>
                 <Info/>
                 <Roadmap/>

@@ -204,14 +204,9 @@ for i in data:
 		"properties": {
 			"files": [{ "uri": str(token_id) + '.png', "type": "image/png" }],
 			"category": "image",
-			"creators": [
-			{
+			"creators": [{
 			  "address": "ENy8xoWG82Nh9xcUAd6uVARUj4JsDVczhgMpGS39n2ow",
-			  "share": 98
-			},
-			{
-			  "address": "Aqt5uVvnXHdxiDSuRn594pAaFu2MmHDepTDBZTq7gLRc",
-			  "share": 2
+			  "share": 100
 			}]
 		}
     }

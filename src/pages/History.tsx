@@ -14,17 +14,7 @@ import {
     Tag
 } from '@chakra-ui/react';
 import bg1 from '../assets/img/bg.jpg';
-import w2 from '../assets/work/2.png';
-import w3 from '../assets/work/3.png';
-import w4 from '../assets/work/4.png';
-import w5 from '../assets/work/5.png';
-import w6 from '../assets/work/6.png';
-import w7 from '../assets/work/7.png';
-import w8 from '../assets/work/8.png';
-import w9 from '../assets/work/9.png';
-import w10 from '../assets/work/10.png';
-import w11 from '../assets/work/11.png';
-import w12 from '../assets/work/12.png';
+
 // @ts-ignore
 import GlitchText from 'react-glitch-effect/core/GlitchText';
 import Footer from '../components/Footer';
@@ -33,12 +23,45 @@ import ChakraCarousel from "../components/ChakraCarousel";
 import {capsFirst} from "../utils";
 import React, {useState, useEffect} from "react";
 
+
+import w1 from '../assets/img/works/6_IMGP.png';
+import w2 from '../assets/img/works/8_IMGP.png';
+import w3 from '../assets/img/works/9_IMGP.png';
+import w4 from '../assets/img/works/11_IMGP.png';
+import w5 from '../assets/img/works/15_IMGP.png';
+import w6 from '../assets/img/works/a9_IMGP.png';
+import w7 from '../assets/img/works/a1_IMGP.png';
+import w8 from '../assets/img/works/a0_IMGP.png';
+import w9 from '../assets/img/works/a4_IMGP.png';
+import w10 from '../assets/img/works/a5_IMGP.png';
+import w11 from '../assets/img/works/a2_IMGP.png';
+import w12 from '../assets/img/works/a3_IMGP.png';
+import w13 from '../assets/img/works/a6_IMGP.png';
+import w14 from '../assets/img/works/a8_IMGP.png';
+import w15 from '../assets/img/works/a11_IMGP.png';
+import w16 from '../assets/img/works/32_IMGP.png';
+import w17 from '../assets/img/works/34_IMGP.png';
+import w18 from '../assets/img/works/213_IMGP.png';
+import w19 from '../assets/img/works/234_IMGP.png';
+import w20 from '../assets/img/works/237_IMGP.png';
+import w21 from '../assets/img/works/16_IMGP.png';
+import w22 from '../assets/img/works/12_IMGP.png';
+import w23 from '../assets/img/works/22_IMGP.png';
+import w24 from '../assets/img/works/28_IMGP.png';
+import w25 from '../assets/img/works/32_IMGP.png';
+import w26 from '../assets/img/works/36_IMGP.png';
+import w27 from '../assets/img/works/212_IMGP.png';
+import w28 from '../assets/img/works/189_IMGP.png';
+import w29 from '../assets/img/works/37_IMGP.png';
+import w30 from '../assets/img/works/131_IMGP.png';
+
+
 export default function History() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
         // @ts-ignore
-        setData([w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12]);
+        setData([w1, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12, w13, w14, w15, w16, w17, w18, w19, w20, w21, w22, w23, w24, w25, w26, w27, w28, w29, w30]);
     }, []);
     return (
         <section id={'history'}>
@@ -52,20 +75,20 @@ export default function History() {
                 py={{base: 20, md: 28}}
                 direction={{base: 'column', md: 'row'}}>
                 <Stack flex={1} spacing={{base: 5, md: 10}}>
-                    <GlitchText color1={'#00FFA3'} color2={'#DC1FFF'}>
-                        <Heading
-                            lineHeight={1}
-                            fontWeight={200}
-                            align={'center'}
-                            fontSize={{base: '8xl', sm: '8xl', lg: '8xl'}}>
-                            <Text
-                                as={'span'}
-                                position={'relative'}
-                            >
-                                <b>HISTORY</b>
-                            </Text>
-                        </Heading>
-                    </GlitchText>
+
+                    <Heading
+                        lineHeight={1}
+                        fontWeight={200}
+                        align={'center'}
+                        fontSize={{base: '8xl', sm: '8xl', lg: '8xl'}}>
+                        <Text
+                            as={'span'}
+                            position={'relative'}
+                        >
+                            <b>HISTORY</b>
+                        </Text>
+                    </Heading>
+
 
                     <Center>
 
@@ -81,7 +104,7 @@ export default function History() {
                     </Center>
                     <Center>
                         <Container maxW="4xl" h={'xl'} centerContent>
-                            <Youtube youtubeId={'yFcUJGlbsqI'}/>
+                            <Youtube youtubeId={'-jaVavHWF4I'}/>
                         </Container>
                     </Center>
                 </Stack>
@@ -119,7 +142,7 @@ export default function History() {
                     {data.map((post, index) => (
                         <Flex
                             key={index}
-                            boxShadow="rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px"
+                            boxShadow="rgba(0, 0, 0, 0.1) 0px 3px 6px, rgba(0, 0, 0, 0.15) 0px 3px 4px"
                             justifyContent="space-between"
                             flexDirection="column"
                             overflow="hidden"
@@ -136,13 +159,12 @@ export default function History() {
                                         transform: 'scale(1.07)',
                                         transition: 'all 0.5s'
                                     }}
-                                    borderRadius="75"
-                                    boxSize="150px"
+                                    borderRadius="25"
                                     alt={'Zombie Hero Image ' + index}
                                     objectFit={'cover'}
                                     align={'center'}
-                                    w={'350'}
-                                    h={'350'}
+                                    w={'450'}
+                                    h={'450'}
                                     src={post}
                                 />
                             </VStack>
