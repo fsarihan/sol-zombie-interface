@@ -53,6 +53,7 @@ function StatsCard(props: StatsCardProps) {
     const {title, stat} = props;
     return (
         <Stat
+
             px={{base: 2, md: 4}}
             py={'5'}
             shadow={'xl'}
@@ -170,6 +171,7 @@ export default function Home() {
                        backgroundSize={'cover'}>
                 <Toaster/>
                 <Stack
+                    mt={-100}
                     h="100vh" //TODO: burayı sil.
                     align={'center'}
                     spacing={{base: 6, md: 8}}
