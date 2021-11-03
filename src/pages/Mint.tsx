@@ -163,11 +163,11 @@ export default function Home() {
 
     return (
         <>
+            <Header/>
             <Container maxW={'full'} backgroundImage={bg1}
                        backgroundAttachment={'fixed'}
                        backgroundPosition={'center'}
                        backgroundSize={'cover'}>
-                <Header/>
                 <Toaster/>
                 <Stack
                     h="100vh" //TODO: burayı sil.

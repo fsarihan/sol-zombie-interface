@@ -178,8 +178,16 @@ const NavBarContainer = ({children, ...props}) => {
             w="100%"
             px={16}
             py={5}
-            bg={["primary.500", "primary.500", "transparent", "transparent"]}
+            sx={{
+                position: '-webkit-sticky', /* Safari */
+                // @ts-ignore
+                position: 'sticky',
+                top: '0',
+                'z-index': "999",
+            }}
+            bgColor={'rgba(0, 0, 0,0.1)'}
             color={["white", "white", "primary.700", "primary.700"]}
+
             {...props}
         >
             {children}
