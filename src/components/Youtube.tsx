@@ -8,7 +8,7 @@ export default function Youtube({youtubeId}: any) {
             }}
             src={`https://www.youtube.com/embed/${youtubeId}?autoplay=0&amp;controls=0&amp;showinfo=0&amp;rel=0&amp;loop=0&amp;modestbranding=1&amp;wmode=transparent`}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            frameBorder="0"
+            frameBorder="1"
         />
 
     );

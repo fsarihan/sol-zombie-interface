@@ -171,13 +171,12 @@ export default function Home() {
                        backgroundSize={'cover'}>
                 <Toaster/>
                 <Stack
-                    mt={-100}
-                    h="100vh" //TODO: burayı sil.
+                    mt={-200}
                     align={'center'}
                     spacing={{base: 6, md: 8}}
                     py={{base: 20, md: 20}}
                     direction={{base: 'column', md: 'row'}}>
-                    <Stack flex={1} spacing={{base: 5, md: 10}}>
+                    <Stack flex={1} spacing={{base: 5, md: 10}} mt={200}>
                         <GlitchText color1={'#00FFA3'} color2={'#DC1FFF'}>
                             <Heading
                                 lineHeight={1}
@@ -188,70 +187,70 @@ export default function Home() {
                                     as={'span'}
                                     position={'relative'}
                                 >
-                                    <b>COMING SOON</b>
+                                    <b>MINT NFT</b>
                                 </Text>
                             </Heading>
                         </GlitchText>
-                        {/*<Text color={'white'} lineHeight={1.0}*/}
-                        {/*      align={'center'}*/}
-                        {/*      fontWeight={200}*/}
-                        {/*      fontSize={{base: '3xl', sm: '2xl', lg: '3xl'}}>*/}
-                        {/*    There are no bonding curves, no price tiers here. Buying a fairly distributed SOL ZOMBIE NFT costs currently {MINT_PRICE_SOL} SOL.*/}
-                        {/*</Text>*/}
+                        <Text color={'white'} lineHeight={1.0}
+                              align={'center'}
+                              fontWeight={200}
+                              fontSize={{base: '3xl', sm: '2xl', lg: '3xl'}}>
+                            There are no bonding curves, no price tiers here. Buying a fairly distributed SOL ZOMBIE NFT costs currently {MINT_PRICE_SOL} SOL.
+                        </Text>
 
                     </Stack>
                 </Stack>
 
-                {/*{connected ? (*/}
-                {/*    <>*/}
-                {/*        {new Date(mintStartDate).getTime() < Date.now() ? (*/}
-                {/*            <>*/}
-                {/*                {isSoldOut ? (*/}
-                {/*                    <>*/}
-                {/*                        <Center>*/}
-                {/*                            <Text fontSize={'6xl'} mb={250}>SOLD OUT</Text>*/}
-                {/*                        </Center>*/}
-                {/*                    </>*/}
-                {/*                ) : (*/}
-                {/*                    <>*/}
-                {/*                        <FormControl id="amount" mb={'75'}>*/}
-                {/*                            <Center>*/}
-                {/*                                <MintMany/>*/}
-                {/*                            </Center>*/}
+                {connected ? (
+                    <>
+                        {new Date(mintStartDate).getTime() < Date.now() ? (
+                            <>
+                                {isSoldOut ? (
+                                    <>
+                                        <Center>
+                                            <Text fontSize={'6xl'} mb={250}>SOLD OUT</Text>
+                                        </Center>
+                                    </>
+                                ) : (
+                                    <>
+                                        <FormControl id="amount" mb={'75'}>
+                                            <Center>
+                                                <MintMany/>
+                                            </Center>
 
-                {/*                        </FormControl>*/}
+                                        </FormControl>
 
-                {/*                    </>*/}
-                {/*                )}*/}
-                {/*            </>*/}
-                {/*        ) : (isMintLive ? (*/}
-                {/*                <>*/}
-                {/*                    <FormControl id="amount" mb={'75'}>*/}
-                {/*                        <Center>*/}
-                {/*                            <MintMany/>*/}
-                {/*                        </Center>*/}
-                {/*                    </FormControl>*/}
+                                    </>
+                                )}
+                            </>
+                        ) : (isMintLive ? (
+                                <>
+                                    <FormControl id="amount" mb={'75'}>
+                                        <Center>
+                                            <MintMany/>
+                                        </Center>
+                                    </FormControl>
 
-                {/*                </>*/}
-                {/*            ) : (*/}
-                {/*                <Center>*/}
-                {/*                    <Text fontSize={'4xl'} mb={300}>*/}
-                {/*                        <Countdown*/}
-                {/*                            date={mintStartDate}*/}
-                {/*                            onMount={({completed}) => completed && setIsMintLive(true)}*/}
-                {/*                            onComplete={() => setIsMintLive(true)}*/}
-                {/*                        />*/}
-                {/*                    </Text>*/}
-                {/*                </Center>*/}
-                {/*            )*/}
-                {/*        )}*/}
-                {/*    </>*/}
-                {/*) : (*/}
-                {/*    <Box mb={'265'}>*/}
-                {/*        <Center fontSize={'4xl'}>CONNECT WALLET TO MINT</Center>*/}
-                {/*        <Center> <WalletMultiButton/></Center>*/}
-                {/*    </Box>*/}
-                {/*)}*/}
+                                </>
+                            ) : (
+                                <Center>
+                                    <Text fontSize={'4xl'} mb={300}>
+                                        <Countdown
+                                            date={mintStartDate}
+                                            onMount={({completed}) => completed && setIsMintLive(true)}
+                                            onComplete={() => setIsMintLive(true)}
+                                        />
+                                    </Text>
+                                </Center>
+                            )
+                        )}
+                    </>
+                ) : (
+                    <Box mb={'265'}>
+                        <Center fontSize={'4xl'}>CONNECT WALLET TO MINT</Center>
+                        <Center> <WalletMultiButton/></Center>
+                    </Box>
+                )}
 
 
                 {/*<Box maxW="lg" mx={'auto'} pt={5} px={{base: 2, sm: 12, md: 17}}>*/}

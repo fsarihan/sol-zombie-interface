@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {
     Link,
     Box,
@@ -15,6 +15,7 @@ import "@fontsource/teko/400.css"
 import "@fontsource/teko/700.css"
 // @ts-ignore
 import {Link as RSLink, animateScroll as scroll} from "react-scroll";
+import {useScrollPosition} from "@n8tb1t/use-scroll-position";
 
 const NavBar = (props: any) => {
     const [isOpen, setIsOpen] = React.useState(false);
@@ -169,6 +170,21 @@ const MenuLinks = ({isOpen}) => {
 
 // @ts-ignore
 const NavBarContainer = ({children, ...props}) => {
+    const [headerStyle, setHeaderStyle] = useState('rgba(0, 0, 0, 0)');
+
+    useScrollPosition(
+        ({prevPos, currPos}) => {
+            let shouldBeStyle: any;
+            if (currPos.y != prevPos.y) {
+                shouldBeStyle = 'rgba(0, 0, 0, ' + (currPos.y * -1 / 600) + ')';
+            }
+
+            if (JSON.stringify(shouldBeStyle) === JSON.stringify(headerStyle)) return
+
+            setHeaderStyle(shouldBeStyle)
+        },
+        [headerStyle]
+    )
     return (
         <Flex
             as="nav"
@@ -185,7 +201,7 @@ const NavBarContainer = ({children, ...props}) => {
                 top: '0',
                 'z-index': "999",
             }}
-            bgColor={'rgba(0, 0, 0,0.1)'}
+            bgColor={headerStyle}
             color={["white", "white", "primary.700", "primary.700"]}
 
             {...props}
