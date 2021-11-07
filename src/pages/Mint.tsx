@@ -114,7 +114,7 @@ export default function Home() {
                 <Center>
                     <Text
                         fontSize={{base: '4xl', sm: '3xl', lg: '4xl'}}
-                        colorScheme="red"> YOUR BALANCE {balance.toFixed(2)} SOL
+                        colorScheme="red"> YOUR BALANCE {balance.toFixed(4)} SOL
 
                     </Text>
                 </Center>
@@ -153,7 +153,7 @@ export default function Home() {
                     <Text
                         my={4}
                         fontSize={{base: '4xl', sm: '3xl', lg: '4xl'}}
-                        colorScheme="red">TOTAL {(mintCount * MINT_PRICE_SOL).toFixed(2)} SOL </Text>
+                        colorScheme="red">TOTAL {(mintCount * MINT_PRICE_SOL).toFixed(4)} SOL </Text>
                 </Center>
                 <Center>
                     <WalletDisconnectButton/>
