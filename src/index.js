@@ -1,11 +1,10 @@
 import React from 'react';
 import {ChakraProvider} from "@chakra-ui/react";
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 import {extendTheme} from "@chakra-ui/react"
 import GA4React from "ga-4-react";
+
 
 const theme = extendTheme({
 	styles: {
@@ -33,12 +32,8 @@ const theme = extendTheme({
 	},
 
 })
-ReactDOM.render(
-	<ChakraProvider theme={theme}>
-		<App/>
-	</ChakraProvider>,
-	document.getElementById('root')
-);
+
+
 try {
 	setTimeout(_ => {
 		const ga4react = new GA4React("G-J51QB5ZNMH");
@@ -48,4 +43,9 @@ try {
 	console.log(err);
 }
 
-
+ReactDOM.render(
+	<ChakraProvider theme={theme}>
+		<App/>
+	</ChakraProvider>,
+	document.getElementById('root')
+);

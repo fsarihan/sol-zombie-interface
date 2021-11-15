@@ -25,7 +25,7 @@ import {
     Badge,
 } from '@chakra-ui/react';
 
-import bg1 from '../assets/img/main-banner-bg2.jpg';
+import bg1 from '../assets/img/main-banner-bg2.jpg.webp';
 // @ts-ignore
 import GlitchText from 'react-glitch-effect/core/GlitchText';
 import Footer from '../components/Footer';
@@ -42,6 +42,7 @@ import AnNFT from "../components/NFT";
 import Header from '../components/HeaderForMintPage';
 
 const MINT_PRICE_SOL: number = parseFloat(process.env.REACT_APP_PUBLIC_MINT_PRICE!);
+const MINT_START_DATE: number = parseFloat(process.env.REACT_APP_PUBLIC_CANDY_START_DATE!);
 require('../style/style.css');
 
 interface StatsCardProps {
@@ -97,9 +98,9 @@ export default function Home() {
     const [isMintLive, setIsMintLive] = useState(false);
 
     useEffect(() => {
-        console.log(new Date(mintStartDate).getTime());
-        console.log(Date.now());
-        console.log(new Date(mintStartDate).getTime() < Date.now());
+        // console.log(new Date(mintStartDate).getTime());
+        // console.log(Date.now());
+        // console.log(new Date(mintStartDate).getTime() < Date.now());
         if (new Date(mintStartDate).getTime() < Date.now()) {
             setIsMintLive(true);
         }
@@ -162,6 +163,7 @@ export default function Home() {
         );
     };
 
+    // @ts-ignore
     return (
         <>
             <Header/>
@@ -236,7 +238,8 @@ export default function Home() {
                                 <Center>
                                     <Text fontSize={'4xl'} mb={300}>
                                         <Countdown
-                                            date={mintStartDate}
+                                            /*@ts-ignore*/
+                                            date={mintStartDate * 2} //TODO: burayı düzelt.
                                             onMount={({completed}) => completed && setIsMintLive(true)}
                                             onComplete={() => setIsMintLive(true)}
                                         />

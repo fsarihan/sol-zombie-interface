@@ -5,14 +5,18 @@ import {
     Box,
     Heading,
     Text,
-    Image,
+    Button,
+    Center,
+    Image, useColorModeValue,
 } from '@chakra-ui/react';
-import logo from '../assets/img/banner-img1.png';
+import logo from '../assets/img/banner-img1.webp';
 import bg2 from '../assets/img/main-banner-bg2.jpg';
 // @ts-ignore
 import GlitchText from 'react-glitch-effect/core/GlitchText';
 import Footer from '../components/Footer';
 import Header from "../components/Header";
+import {NavLink as LinkRouter} from "react-router-dom";
+import React from "react";
 
 // @ts-ignore
 export default function Home() {
@@ -51,6 +55,27 @@ export default function Home() {
                           fontSize={{base: '3xl', sm: '2xl', lg: '3xl'}}>
                         <b>Welcome to “The World of Living Dead”</b>
                     </Text>
+                    <Center>
+                        <Text
+                            maxW={200}
+                            textAlign={'center'}
+                            fontSize={'2xl'}
+                            backgroundColor={'zombie.100'}
+                            px={2}
+                            py={2}
+                            rounded={'md'}
+                            _hover={{
+                                bg: 'red.700',
+                            }}>
+                            <LinkRouter
+                                to="/whitelist"
+                                exact>
+                                WHITE LIST APPLICATION
+                            </LinkRouter>
+                        </Text>
+                    </Center>
+
+
                 </Stack>
                 <Flex
                     flex={1}

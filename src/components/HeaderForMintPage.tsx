@@ -11,8 +11,7 @@ import {
 
 import {NavLink as LinkRouter} from 'react-router-dom';
 import Logo from "./Logo";
-import "@fontsource/teko/400.css"
-import "@fontsource/teko/700.css"
+
 // @ts-ignore
 import {Link as RSLink, animateScroll as scroll} from "react-scroll";
 import {useScrollPosition} from "@n8tb1t/use-scroll-position";
