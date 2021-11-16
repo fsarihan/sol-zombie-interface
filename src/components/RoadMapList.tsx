@@ -13,15 +13,15 @@ import {ArrowForwardIcon} from '@chakra-ui/icons';
 const features = [
     {
         id: 1,
-        text: 'The shape and property of Living Dead will be determined by talented and imaginative graphic designers. (Continues)',
+        text: 'The shape and property of Living Dead will be determined by talented and imaginative graphic designers. (Completed!)',
     },
     {
         id: 2,
-        text: 'Smart Agreement overview and rules will be made and be shared. (Continues)',
+        text: 'Smart Agreement overview and rules will be made and be shared. (Completed!)',
     },
     {
         id: 3,
-        text: 'Smart Agreement completely prepared, the last edits will be made on test web. (Continues)',
+        text: 'Smart Agreement completely prepared, the last edits will be made on test web. (Completed!)',
     },
     {
         id: 4,

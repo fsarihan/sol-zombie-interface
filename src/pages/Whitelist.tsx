@@ -7,6 +7,7 @@ import {
     Stat,
     StatLabel,
     StatNumber,
+    Link,
     Container,
     Stack,
     Heading,
@@ -150,7 +151,12 @@ export default function Whitelist() {
                                         base: '2xl',
                                         sm: '2xl',
                                         lg: '3xl'
-                                    }}>I Followed Sol Zombie NFT Twitter Account.</Text></Checkbox> <p>
+                                    }}>I Followed Sol Zombie NFT <Link
+                                    href="https://twitter.com/SolZombieNFT"
+                                    px={2}
+                                    backgroundColor={'#b33939'}
+                                    target={'_blank'}
+                                >Twitter Account.</Link></Text></Checkbox> <p>
                                 <Checkbox size="lg" mt={5}
                                           {...register("twitterRT", {
                                               required: "This is required",
@@ -159,12 +165,17 @@ export default function Whitelist() {
                                         base: '2xl',
                                         sm: '2xl',
                                         lg: '3xl'
-                                    }}>I liked the whitelist post and retweeted it.</Text></Checkbox></p>
+                                    }}>I liked the <Link
+                                    px={2}
+                                    backgroundColor={'#b33939'}
+                                    href="https://twitter.com/SolZombieNFT/status/1460527273086488576"
+                                    target={'_blank'}
+                                >whitelist post</Link> and retweeted it.</Text></Checkbox></p>
 
                                 <FormErrorMessage>
                                     {errors.name && errors.name.message}
                                 </FormErrorMessage>
-                                <Button my={5} w="full" colorScheme="red" fontSize={'xl'} isLoading={isSubmitting}
+                                <Button my={8} w="full" colorScheme="red" fontSize={'xl'} isLoading={isSubmitting}
                                         type="submit">
                                     Send My Application
                                 </Button>
