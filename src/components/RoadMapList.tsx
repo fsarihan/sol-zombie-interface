@@ -43,6 +43,10 @@ const features = [
         id: 8,
         text: 'The payment which is taken from swap fees will be shared monthly with NFT holders. (Continues)',
     },
+    {
+        id: 9,
+        text: 'The listing will be made in Solana NFT marketplace like Solsea.io, DigitalEyes, Magic Eden, Solanart.io.(Continues)',
+    },
 ];
 
 
