@@ -239,7 +239,7 @@ export default function Home() {
                                     <Text fontSize={'4xl'} mb={300}>
                                         <Countdown
                                             /*@ts-ignore*/
-                                            date={mintStartDate * 2} //TODO: burayı düzelt.
+                                            date={mintStartDate}
                                             onMount={({completed}) => completed && setIsMintLive(true)}
                                             onComplete={() => setIsMintLive(true)}
                                         />

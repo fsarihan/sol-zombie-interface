@@ -58,6 +58,25 @@ export default function Home() {
                     <Center>
                         <Text
                             maxW={200}
+                            mx={5}
+                            textAlign={'center'}
+                            fontSize={'2xl'}
+                            backgroundColor={'blue.500'}
+                            px={2}
+                            py={2}
+                            rounded={'md'}
+                            _hover={{
+                                bg: 'blue.700',
+                            }}>
+                            <LinkRouter
+                                to="/whitelist-check"
+                                exact>
+                                WHITE LIST CHECK
+                            </LinkRouter>
+                        </Text>
+                        <Text
+                            maxW={200}
+                            mx={5}
                             textAlign={'center'}
                             fontSize={'2xl'}
                             backgroundColor={'zombie.100'}
@@ -68,9 +87,9 @@ export default function Home() {
                                 bg: 'red.700',
                             }}>
                             <LinkRouter
-                                to="/whitelist"
+                                to="/mint"
                                 exact>
-                                WHITE LIST APPLICATION
+                                MINT SOL ZOMBIE
                             </LinkRouter>
                         </Text>
                     </Center>
