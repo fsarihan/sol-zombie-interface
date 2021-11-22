@@ -27,7 +27,7 @@ export default function Home() {
             {/*           backgroundRepeat="round">*/}
 
             <Stack
-                mt={-100}
+                mt={-150}
                 h="100vh"
                 align={'center'}
                 spacing={{base: 6, md: 8}}

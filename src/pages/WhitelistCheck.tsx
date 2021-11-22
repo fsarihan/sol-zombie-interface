@@ -1770,8 +1770,23 @@ export default function Whitelist() {
             "address": "FZBaVkSZdzmLFYMzus6ZDAHMAHuPwJ931hrJtJf45tW4",
             "twitter": "omagico001",
             "country": "Taiwan"
+        },
+        {
+            "address": "2NCeaHiJCwNTUYZPtivtx5ZfCVD7McXjwSCUW8EyzYtB",
+            "twitter": "wijangsuanG",
+            "country": "Indonesia"
+        },
+        {
+            "address": "Gs3WP18hbzNpbBgiU39e6tfkggfCKRyNqPqJQcthuHFD",
+            "twitter": "solanairan",
+            "country": "united kingdom"
+        },
+        {
+            "address": "3NSfZHoaKZb4NoTjRJARBvJQMJACZdxrhXazaeu227js",
+            "twitter": "csiavash",
+            "country": "united kingdom"
         }
-    ];
+    ]
 
     function onSubmit(values: any) {
         return new Promise((resolve) => {
@@ -1825,6 +1840,11 @@ export default function Whitelist() {
                                 <b>Whitelist Check</b>
                             </Text>
                         </Heading>
+                        <Text textAlign={'center'} fontSize={'4xl'}>
+                            Pre Sale (Whitelisted wallets only): 23 NOV 5 PM (UTC)<br/>
+                            Public Sale: 23 NOV 6 PM (UTC)
+                        </Text>
+
                     </Stack>
                 </Stack>
                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -1856,6 +1876,11 @@ export default function Whitelist() {
                     </FormControl>
                 </form>
                 <br/>
+                <Text textAlign={'center'} fontSize={'xl'}>
+                    The first 3999 Zombie NFT minting cost will be 0.99 SOL.<br/> After 3999 characters the cost will be 1.99 Sol
+
+                    After 3999 characters are minted, we will stop the sale for a short time, so you won't accidentally overpay 0.99 Sol. Don't worry about that, you will be able to see it when the price is 1.99.
+                </Text>
                 <Footer/>
             </Container>
         </>

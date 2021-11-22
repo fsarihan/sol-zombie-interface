@@ -43,6 +43,7 @@ import Header from '../components/HeaderForMintPage';
 
 const MINT_PRICE_SOL: number = parseFloat(process.env.REACT_APP_PUBLIC_MINT_PRICE!);
 const MINT_START_DATE: number = parseFloat(process.env.REACT_APP_PUBLIC_CANDY_START_DATE!);
+
 require('../style/style.css');
 
 interface StatsCardProps {
@@ -105,7 +106,30 @@ export default function Home() {
             setIsMintLive(true);
         }
     }, []);
+    // @ts-ignore
+    const renderer = ({days, hours, minutes, seconds, completed}) => {
+        if (completed) {
+            // Render a completed state
+            setIsMintLive(true)
+        } else {
+            // Render a countdown
+            return (
+                <>
+                    <Text textAlign={'center'} fontSize={'4xl'}>
+                        Pre Sale (Whitelisted wallets only): 23 NOV 5 PM (UTC)<br/>
+                        Public Sale: 23 NOV 6 PM (UTC)
+                    </Text>
+                    <Text textAlign={'center'} fontSize={'6xl'}
+                          color={'zombie.100'}>{days}D:{hours}H:{minutes}M:{seconds}S</Text>
+                    <Text textAlign={'center'} fontSize={'2xl'}>
+                        The first 3999 Zombie NFT minting cost will be 0.99 SOL.<br/> After 3999 characters the cost will be 1.99 Sol
 
+                        After 3999 characters are minted, we will stop the sale for a short time, so you won't accidentally overpay 0.99 Sol. Don't worry about that, you will be able to see it when the price is 1.99.
+                    </Text>
+                </>
+            );
+        }
+    };
     const MintMany = () => {
         const [mintCount, setMintCount] = useState(1);
 
@@ -159,6 +183,11 @@ export default function Home() {
                 <Center>
                     <WalletDisconnectButton/>
                 </Center>
+                <Text textAlign={'center'} fontSize={'2xl'}>
+                    The first 3999 Zombie NFT minting cost will be 0.99 SOL.<br/> After 3999 characters the cost will be 1.99 Sol
+
+                    After 3999 characters are minted, we will stop the sale for a short time, so you won't accidentally overpay 0.99 Sol. Don't worry about that, you will be able to see it when the price is 1.99.
+                </Text>
             </Box>
         );
     };
@@ -240,6 +269,7 @@ export default function Home() {
                                         <Countdown
                                             /*@ts-ignore*/
                                             date={mintStartDate}
+                                            renderer={renderer}
                                             onMount={({completed}) => completed && setIsMintLive(true)}
                                             onComplete={() => setIsMintLive(true)}
                                         />
@@ -250,8 +280,19 @@ export default function Home() {
                     </>
                 ) : (
                     <Box mb={'265'}>
+                        <Text textAlign={'center'} fontSize={'4xl'}>
+                            Pre Sale (Whitelisted wallets only): 23 NOV 5 PM (UTC)<br/>
+                            Public Sale: 23 NOV 6 PM (UTC)
+                        </Text>
                         <Center fontSize={'4xl'}>CONNECT WALLET TO MINT</Center>
+
                         <Center> <WalletMultiButton/></Center>
+                        <Text textAlign={'center'} fontSize={'2xl'} mt={10}>
+                            The first 3999 Zombie NFT minting cost will be 0.99 SOL.<br/> After 3999 characters the cost will be 1.99 Sol
+
+                            After 3999 characters are minted, we will stop the sale for a short time, so you won't accidentally overpay 0.99 Sol. Don't worry about that, you will be able to see it when the price is 1.99.
+                        </Text>
+
                     </Box>
                 )}
 
