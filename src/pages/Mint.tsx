@@ -116,8 +116,8 @@ export default function Home() {
             return (
                 <>
                     <Text textAlign={'center'} fontSize={'4xl'}>
-                        Pre Sale (Whitelisted wallets only): 23 NOV 5 PM (UTC)<br/>
-                        Public Sale: 23 NOV 6 PM (UTC)
+                        {/*Pre Sale (Whitelisted wallets only): 23 NOV 5 PM (UTC)<br/>*/}
+                        {/*Public Sale: 23 NOV 6 PM (UTC)*/}
                     </Text>
                     <Text textAlign={'center'} fontSize={'6xl'}
                           color={'zombie.100'}>{days}D:{hours}H:{minutes}M:{seconds}S</Text>
@@ -218,7 +218,7 @@ export default function Home() {
                                     as={'span'}
                                     position={'relative'}
                                 >
-                                    <b>MINT NFT</b>
+                                    <b>MINT LIVE</b>
                                 </Text>
                             </Heading>
                         </GlitchText>
@@ -280,10 +280,10 @@ export default function Home() {
                     </>
                 ) : (
                     <Box mb={'265'}>
-                        <Text textAlign={'center'} fontSize={'4xl'}>
-                            Pre Sale (Whitelisted wallets only): 23 NOV 5 PM (UTC)<br/>
-                            Public Sale: 23 NOV 6 PM (UTC)
-                        </Text>
+                        {/*<Text textAlign={'center'} fontSize={'4xl'}>*/}
+                        {/*    Pre Sale (Whitelisted wallets only): 23 NOV 5 PM (UTC)<br/>*/}
+                        {/*    Public Sale: 23 NOV 6 PM (UTC)*/}
+                        {/*</Text>*/}
                         <Center fontSize={'4xl'}>CONNECT WALLET TO MINT</Center>
 
                         <Center> <WalletMultiButton/></Center>

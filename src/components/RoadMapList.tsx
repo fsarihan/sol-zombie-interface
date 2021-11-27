@@ -29,7 +29,7 @@ const features = [
     },
     {
         id: 5,
-        text: 'The pre-sale date will be determined. (Continues)',
+        text: 'The pre-sale date will be determined. (Completed)',
     },
     {
         id: 6,
@@ -37,7 +37,7 @@ const features = [
     },
     {
         id: 7,
-        text: 'The listing will be made in Solana NFT marketplace like Solsea.io, DigitalEyes, Magic Eden, Solanart.io.(Continues)',
+        text: 'The listing will be made in Solana NFT marketplace like Solsea.io, DigitalEyes (Continues)',
     },
     {
         id: 8,
